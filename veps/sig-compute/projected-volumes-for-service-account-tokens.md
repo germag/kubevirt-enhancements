@@ -71,9 +71,9 @@ via virtiofs. Feature gate: ProjectedVolumes.
 ```yaml
 volumes:
 - name: irsa-volume
-  projected:
-    sources:
-    - serviceAccountToken:
+  serviceAccount:
+    serviceAccountName: service-account-irsa
+    serviceAccountToken:
         audience: "sts.amazonaws.com"
         expirationSeconds: 3600
         path: "token"
